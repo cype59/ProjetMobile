@@ -1,5 +1,6 @@
 package com.example.projet;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -18,6 +19,10 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-
     }
+
+    public void openActivity3 (View view){
+        startActivity(new Intent(this, ThirdActivity.class));
+    }
+
 }

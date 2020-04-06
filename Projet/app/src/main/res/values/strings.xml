@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Projet</string>
-    <string name="action_settings">Settings</string>
+    <string name="location_activity">Localisation</string>
+    <string name="camera_activity">Open Camera</string>
     <string name="title_activity_second">secondActivity</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
