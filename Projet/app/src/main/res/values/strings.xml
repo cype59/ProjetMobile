@@ -4,4 +4,14 @@
     <string name="camera_activity">Open Camera</string>
     <string name="title_activity_second">secondActivity</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="stade">Stade</string>
+    <string name="equipe1">Equipe 1 </string>
+    <string name="formation1">Formation</string>
+    <string name="equipe2">Equipe 2</string>
+    <string name="formation2">Formation</string>
+    <string name="arbitre">Arbitre</string>
+    <string name="btn_add_match">Go ! </string>
+
+
 </resources>
