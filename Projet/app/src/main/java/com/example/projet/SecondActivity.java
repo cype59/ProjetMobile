@@ -50,7 +50,7 @@ public class SecondActivity extends AppCompatActivity {
                         equipe2.getText().toString(),formation2.getText().toString(),arbitre.getText().toString());
                 if (inserted == true){
                     Toast.makeText(SecondActivity.this, "Data inserted", Toast.LENGTH_LONG).show();
-                    openActivity3();
+                    openActivityJoueur();
 
                 }
                 else
@@ -59,8 +59,8 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
-    public void openActivity3 (){
-        startActivity(new Intent(this, ThirdActivity.class));
+    public void openActivityJoueur (){
+        startActivity(new Intent(this, Joueur.class));
     }
 
 }

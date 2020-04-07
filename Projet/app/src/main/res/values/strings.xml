@@ -13,5 +13,8 @@
     <string name="arbitre">Arbitre</string>
     <string name="btn_add_match">Go ! </string>
 
+    <string name="nomJoueur">Joueur </string>
+    <string name="btn_add_joueur">Ajouter </string>
+
 
 </resources>
