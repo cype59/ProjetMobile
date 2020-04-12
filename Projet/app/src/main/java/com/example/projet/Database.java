@@ -2,8 +2,10 @@ package com.example.projet;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -11,18 +13,21 @@ public class Database extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Foot.db";
     public static final String TABLE_NAME_1 = "table_match";
     public static final String TABLE_NAME_2 = "table_joueur";
-    public static final String COL_1_1 = "ID";
+    public static final String COL_1_1 = "_id";
     public static final String COL_2_1 = "Stade";
     public static final String COL_3_1 = "Equipe1";
     public static final String COL_4_1 = "Formation1";
     public static final String COL_5_1 = "Equipe2";
     public static final String COL_6_1 = "Formation2";
     public static final String COL_7_1 = "Arbitre";
-    public static final String COL_1_2 = "ID";
+    public static final String COL_1_2 = "_id";
     public static final String COL_2_2 = "Nom";
     public static final String COL_3_2 = "NumEquipe";
     public static final String COL_4_2 = "Role";
     public static final String COL_5_2 = "id_match";
+
+    private SQLiteDatabase database;
+
 
 
     public Database(@Nullable Context context) {
@@ -61,18 +66,38 @@ public class Database extends SQLiteOpenHelper {
             return true;
     }
 
-    public  boolean insertJoueur (String nom, int numEquipe, String role, int idMatch){
+    public  boolean insertJoueur (String nom, int numEquipe, String role){
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM table_match", null);
+        cursor.moveToLast();
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2_2,nom);
         contentValues.put(COL_3_2,numEquipe);
         contentValues.put(COL_4_2,role);
-        contentValues.put(COL_5_2,idMatch);
+        contentValues.put(COL_5_2,cursor.getString(0));
 
         long result = db.insert(TABLE_NAME_2,null,contentValues);
         if (result == -1)
             return false;
         else
             return true;
+    }
+
+    public void list_equipe (TextView textView, int col) {
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM table_match", null);
+        textView.setText("");
+        cursor.moveToLast();
+        textView.append(cursor.getString(col) + " ");
+    }
+
+    public void list_joueur (TextView textView, int col) {
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM table_match", null);
+        cursor.moveToLast();
+        String numMatch = cursor.getString(0);
+        Cursor cursor1 = this.getReadableDatabase().rawQuery("SELECT * FROM table_joueur WHERE id_match LIKE "+ numMatch + " AND NumEquipe LIKE 1", null);
+        textView.setText("");
+        while (cursor1.moveToNext()) {
+            textView.append(cursor1.getString(1) + "\n");
+        }
     }
 }

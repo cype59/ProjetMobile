@@ -5,16 +5,26 @@
     <string name="title_activity_second">secondActivity</string>
     <string name="title_activity_maps">Map</string>
 
+    <string name="image">Prendre une photo</string>
+
+    <string name="bienvenue">Bienvenue sur foot tracker</string>
+    <string name="nouveauMatch">Nouveau match</string>
+    <string name="ancienMatch">Voir les anciens matchs</string>
+
+
+
     <string name="stade">Stade</string>
     <string name="equipe1">Equipe 1 </string>
-    <string name="formation1">Formation</string>
+    <string name="formation">Formation : </string>
     <string name="equipe2">Equipe 2</string>
-    <string name="formation2">Formation</string>
     <string name="arbitre">Arbitre</string>
     <string name="btn_add_match">Go ! </string>
+    <string name="details">Détails du match</string>
+    <string name="nomEquipe">Nom : </string>
 
     <string name="nomJoueur">Joueur </string>
     <string name="btn_add_joueur">Ajouter </string>
+    <string name="commencerMatch">Commencer le match !</string>
 
 
 </resources>

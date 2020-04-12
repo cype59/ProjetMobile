@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/equipe1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -38,6 +39,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal">
 
         <Button
@@ -45,12 +47,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_add_joueur"
-            android:textSize="35dp">
+            android:textSize="20sp">
 
         </Button>
     </LinearLayout>
 
     <TextView
+        android:id="@+id/equipe2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -89,7 +92,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_add_joueur"
-            android:textSize="35dp">
+            android:textSize="20sp">
 
         </Button>
     </LinearLayout>
@@ -99,16 +102,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/match"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Commencer le match !"
-        android:textSize="35dp"
-        android:onClick="openActivity3">
-    </Button>
+        <Button
+            android:id="@+id/match"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="#1E1E1E"
+            android:onClick="openActivity3"
+            android:text="@string/commencerMatch"
+            android:textColor="#fff"
+            android:textSize="35sp"></Button>
 
 
-</LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

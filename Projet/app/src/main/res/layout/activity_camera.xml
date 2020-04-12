@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:id="@+id/imageCapture"/>
+
     <Button
+        android:id="@+id/btn_captureImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Capture Image"
+        android:text="@string/image"
         android:layout_marginTop="10dp"
+        android:background="#1E1E1E"
         android:textColor="#fff"
-        android:background="@color/colorPrimary"
-        android:textSize="18sp"
-        android:id="@+id/btn_captureImage"/>
+        android:textSize="18sp" />
 </LinearLayout>

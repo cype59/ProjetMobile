@@ -6,27 +6,47 @@ android:layout_height="fill_parent"
 android:background="#f2f2f2"
 android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="#00000000"
+        android:text="@string/details"
+        android:textColor="#1E1E1E"
+        android:textSize="30sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/stade"
+            android:textColor="#1E1E1E"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/stade"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:autofillHints="stade"
             android:inputType="text"
             tools:ignore="LabelFor" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/equipe1"
+        android:textSize="20sp"
+        android:textColor="#1E1E1E" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +57,7 @@ android:orientation="vertical">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/equipe1"
+            android:text="@string/nomEquipe"
             android:textSize="20sp" />
 
         <EditText
@@ -53,13 +73,14 @@ android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/formation1"
+            android:text="@string/formation"
             android:textSize="20sp" />
 
         <EditText
@@ -72,6 +93,14 @@ android:orientation="vertical">
             tools:ignore="LabelFor" />
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/equipe2"
+        android:textSize="20sp"
+        android:textColor="#1E1E1E" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -81,7 +110,7 @@ android:orientation="vertical">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/equipe2"
+            android:text="@string/nomEquipe"
             android:textSize="20sp" />
 
         <EditText
@@ -97,13 +126,14 @@ android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/formation2"
+            android:text="@string/formation"
             android:textSize="20sp" />
 
         <EditText
@@ -116,22 +146,25 @@ android:orientation="vertical">
             tools:ignore="LabelFor" />
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
             android:text="@string/arbitre"
+            android:textColor="#1E1E1E"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/arbitre"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:autofillHints="arbitre"
             android:inputType="text"
