@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     public void openActivity2 (View view){
         startActivity(new Intent(this, SecondActivity.class));
     }
+    public void openStats (View view){
+        startActivity(new Intent(this, Stats.class));
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

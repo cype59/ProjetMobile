@@ -105,6 +105,11 @@ public class Database extends SQLiteOpenHelper {
         return cursor1;
     }
 
+    public Cursor list_match () {
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM table_match", null);
+        return cursor;
+    }
+
     public boolean ajout_role (String id[], String role){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

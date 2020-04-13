@@ -166,6 +166,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#FFEB3B"
             android:text="@string/jaune" />
 
         <Button
@@ -173,7 +174,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/rouge" />
+            android:background="#AC0101"
+            android:text="@string/rouge"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 

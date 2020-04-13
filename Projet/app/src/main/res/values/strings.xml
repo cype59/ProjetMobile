@@ -12,7 +12,6 @@
     <string name="ancienMatch">Voir les anciens matchs</string>
 
 
-
     <string name="stade">Stade</string>
     <string name="equipe1">Equipe 1 </string>
     <string name="formation">Formation : </string>
@@ -31,6 +30,8 @@
     <string name="jaune">Carton Jaune</string>
     <string name="rouge">Carton Rouge</string>
     <string name="finirMatch">Finir le match</string>
+
+    <string name="resume">Mes derniers matchs</string>
 
 
 </resources>

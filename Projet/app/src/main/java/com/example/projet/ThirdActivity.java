@@ -1,9 +1,9 @@
 package com.example.projet;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -11,6 +11,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import static java.lang.String.*;
@@ -186,9 +187,36 @@ public class ThirdActivity extends AppCompatActivity {
         btnFinirMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                controller.ajout_score(score_equipe_1,score_equipe_2);
+                confirmDialogDemo();
             }
         });
+
     }
+
+    private void confirmDialogDemo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirmer !");
+        builder.setMessage("Voulez-vous vraiment finir le match ?");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                controller.ajout_score(score_equipe_1,score_equipe_2);
+                startActivity(new Intent(ThirdActivity.this, Stats.class));
+
+            }
+        });
+
+        builder.setNegativeButton("Non", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "Vous pouvez reprendre le match ! ", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.show();
+    }
+
+
 }
 
