@@ -20,11 +20,19 @@ public class Database extends SQLiteOpenHelper {
     public static final String COL_5_1 = "Equipe2";
     public static final String COL_6_1 = "Formation2";
     public static final String COL_7_1 = "Arbitre";
+    public static final String COL_8_1 = "ScoreEquipe1";
+    public static final String COL_9_1 = "ScoreEquipe2";
     public static final String COL_1_2 = "_id";
     public static final String COL_2_2 = "Nom";
     public static final String COL_3_2 = "NumEquipe";
-    public static final String COL_4_2 = "Role";
-    public static final String COL_5_2 = "id_match";
+    public static final String COL_4_2 = "id_match";
+    public static final String COL_5_2 = "But";
+    public static final String COL_6_2 = "Passe";
+    public static final String COL_7_2 = "Jaune";
+    public static final String COL_8_2 = "Rouge";
+
+
+
 
     private SQLiteDatabase database;
 
@@ -38,8 +46,8 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(" create table " + TABLE_NAME_1+ " (ID INTEGER PRIMARY KEY AUTOINCREMENT, Stade TEXT, Equipe1 TEXT, Formation1 TEXT, Equipe2 TEXT, Formation2 TEXT, Arbitre TEXT)");
-        db.execSQL(" create table " + TABLE_NAME_2+ " (ID INTEGER PRIMARY KEY AUTOINCREMENT, Nom TEXT, NumEquipe INT, Role TEXT, id_match INT)");
+        db.execSQL(" create table " + TABLE_NAME_1+ " (ID INTEGER PRIMARY KEY AUTOINCREMENT, Stade TEXT, Equipe1 TEXT, Formation1 TEXT, Equipe2 TEXT, Formation2 TEXT, Arbitre TEXT, ScoreEquipe1 INT, ScoreEquipe2 INT)");
+        db.execSQL(" create table " + TABLE_NAME_2+ " (ID INTEGER PRIMARY KEY AUTOINCREMENT, Nom TEXT, NumEquipe INT, id_match INT, But INT, Passe INT, Jaune INT, Rouge INT)");
 
     }
 
@@ -73,8 +81,7 @@ public class Database extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2_2,nom);
         contentValues.put(COL_3_2,numEquipe);
-        contentValues.put(COL_4_2,role);
-        contentValues.put(COL_5_2,cursor.getString(0));
+        contentValues.put(COL_4_2,cursor.getString(0));
 
         long result = db.insert(TABLE_NAME_2,null,contentValues);
         if (result == -1)
@@ -90,14 +97,39 @@ public class Database extends SQLiteOpenHelper {
         textView.append(cursor.getString(col) + " ");
     }
 
-    public void list_joueur (TextView textView, int col) {
+    public Cursor list_joueur (int equipe) {
         Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM table_match", null);
         cursor.moveToLast();
         String numMatch = cursor.getString(0);
-        Cursor cursor1 = this.getReadableDatabase().rawQuery("SELECT * FROM table_joueur WHERE id_match LIKE "+ numMatch + " AND NumEquipe LIKE 1", null);
-        textView.setText("");
-        while (cursor1.moveToNext()) {
-            textView.append(cursor1.getString(1) + "\n");
+        Cursor cursor1 = this.getReadableDatabase().rawQuery("SELECT * FROM table_joueur WHERE id_match LIKE "+ numMatch + " AND NumEquipe LIKE "+equipe, null);
+        return cursor1;
+    }
+
+    public boolean ajout_role (String id[], String role){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        if (role == "But"){
+            contentValues.put(COL_5_2, 1);
+        }else if (role == "Passe"){
+            contentValues.put(COL_6_2, 1);
+        }else if (role == "Jaune"){
+            contentValues.put(COL_7_2, 1);
+        }else if (role == "Rouge"){
+            contentValues.put(COL_8_2, 1);
         }
+        db.update("table_joueur", contentValues, "ID=?",new String[] {String.valueOf(id[0])});
+        return true;
+    }
+
+    public boolean ajout_score (int score1, int score2){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_8_1, score1);
+        contentValues.put(COL_9_1, score2);
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM table_match", null);
+        cursor.moveToLast();
+        String numMatch = cursor.getString(0);
+        db.update("table_match", contentValues, "ID=?",new String[] {String.valueOf(numMatch)});
+        return true;
     }
 }

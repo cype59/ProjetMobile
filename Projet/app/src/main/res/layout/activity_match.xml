@@ -6,78 +6,183 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
         android:orientation="horizontal">
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/viewEquipe1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#1E1E1E"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/viewScore1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="#1E1E1E"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
         <TextView
-            android:id="@+id/viewEquipe1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50sp"
             android:layout_gravity="center"
-            android:layout_marginTop="-15dp"
-            android:textColor="#1E1E1E"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/editText3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="0" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-15dp"
+            android:layout_marginBottom="15dp"
             android:text="-"
-            android:textSize="60dp" />
+            android:textSize="60sp" />
 
-        <EditText
-            android:id="@+id/editText5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="0"
-            android:gravity="right"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/viewEquipe2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="right"
-            android:layout_marginTop="-15dp"
-            android:textColor="#1E1E1E"
-            android:textSize="20dp" />
+            <TextView
+                android:id="@+id/viewScore2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="#1E1E1E"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/viewEquipe2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="end"
+                android:textColor="#1E1E1E"
+                android:textSize="20dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="232dp"
         android:orientation="horizontal">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="302dp"
+            android:layout_height="230dp"
             android:src="@drawable/compo"></ImageView>
+
+
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/viewJoueur"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Joueurs Equipe1"
+            android:textColor="#1E1E1E"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Joueurs Equipe2"
+            android:textColor="#1E1E1E"
+            android:textSize="20dp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="160dp"
+        android:orientation="horizontal">
+
+        <TableLayout
+            android:id="@+id/idTable1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:stretchColumns="0"></TableLayout>
+
+        <TableLayout
+            android:id="@+id/idTable2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right|end"
+            android:stretchColumns="0"></TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="fds"
-        android:textColor="#1E1E1E"
-        android:textSize="20dp" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/but"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/but" />
+
+        <Button
+            android:id="@+id/passe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/passe" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cartonJaune"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/jaune" />
+
+        <Button
+            android:id="@+id/cartonRouge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rouge" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/finirMatch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/finirMatch" />
 
 
 </LinearLayout>

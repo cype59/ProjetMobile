@@ -26,5 +26,11 @@
     <string name="btn_add_joueur">Ajouter </string>
     <string name="commencerMatch">Commencer le match !</string>
 
+    <string name="but">Buteur</string>
+    <string name="passe">Passeur</string>
+    <string name="jaune">Carton Jaune</string>
+    <string name="rouge">Carton Rouge</string>
+    <string name="finirMatch">Finir le match</string>
+
 
 </resources>
